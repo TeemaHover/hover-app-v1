@@ -1,24 +1,24 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
-import * as React from 'react';
-import { Button, View } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import CustomDrawer from './components/CustomDrawer';
-import { colors } from './constants/style';
-import PlaceHome from './screens/PlaceHome';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { NavigationContainer } from '@react-navigation/native'
+import * as React from 'react'
+import { Button, View } from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import CustomDrawer from './components/CustomDrawer'
+import { COLORS } from './constants/style'
+import PlaceHome from './screens/PlaceHome'
 
 function NotificationsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button onPress={() => navigation.goBack()} title="Go back home" />
     </View>
-  );
+  )
 }
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator()
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
@@ -27,8 +27,8 @@ export default function App() {
         useLegacyImplementation
         initialRouteName="DummyHome"
         screenOptions={{
-          drawerActiveTintColor: colors.white,
-          drawerInactiveTintColor: colors.white,
+          drawerActiveTintColor: COLORS.white,
+          drawerInactiveTintColor: COLORS.white,
           drawerActiveBackgroundColor: '#192841',
           drawerLabelStyle: {
             marginLeft: -15,
@@ -65,5 +65,5 @@ export default function App() {
         />
       </Drawer.Navigator>
     </NavigationContainer>
-  );
+  )
 }

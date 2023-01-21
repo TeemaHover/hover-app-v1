@@ -1,17 +1,17 @@
 import {
   DrawerContentScrollView,
   DrawerItemList,
-} from '@react-navigation/drawer';
-import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { colors } from '../constants/style';
+} from '@react-navigation/drawer'
+import React from 'react'
+import { Image, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { COLORS } from '../constants/style'
 
 const CustomDrawer = (props) => {
   return (
     <View
       className="flex flex-1 py-7"
-      style={{ backgroundColor: colors.darkBlue }}
+      style={{ backgroundColor: COLORS.darkBlue }}
     >
       <DrawerContentScrollView {...props}>
         <View className="px-5 my-5">
@@ -32,7 +32,7 @@ const CustomDrawer = (props) => {
         </TouchableOpacity>
       </View>
     </View>
-  );
-};
+  )
+}
 
-export default CustomDrawer;
+export default CustomDrawer

@@ -4,10 +4,9 @@ export const styles = {
 
   section: 'px-5 my-5',
   marginY: 'my-5',
-  
-};
+}
 
-export const colors = {
+export const COLORS = {
   darkBlue: '#152238',
   white: '#ffffff',
-};
+}

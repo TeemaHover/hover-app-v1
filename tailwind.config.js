@@ -6,6 +6,7 @@ module.exports = {
     colors: {
       darkBlue: '#152238',
       white: '#ffffff',
+      bb: '#990000',
     },
     fontSize: {
       base: '15px',
@@ -14,4 +15,4 @@ module.exports = {
   },
   plugins: [],
   // assets: ['./assets/fonts/'],
-};
+}
