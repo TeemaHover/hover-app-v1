@@ -7,6 +7,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import CustomDrawer from './components/CustomDrawer'
 import { COLORS } from './constants/style'
 import PlaceHome from './screens/PlaceHome'
+import ChooseGroup from './screens/ChooseGroup'
+import { Image } from 'react-native'
+import AddMember from './screens/AddMember'
 
 function NotificationsScreen({ navigation }) {
   return (
@@ -25,7 +28,7 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator
         useLegacyImplementation
-        initialRouteName="DummyHome"
+        initialRouteName="Нүүр"
         screenOptions={{
           drawerActiveTintColor: COLORS.white,
           drawerInactiveTintColor: COLORS.white,
@@ -34,16 +37,27 @@ export default function App() {
             marginLeft: -15,
             fontSize: 15,
           },
+
+          headerShadowVisible: false,
         }}
         drawerContent={(props) => <CustomDrawer {...props} />}
       >
         <Drawer.Screen
           name=" "
           options={{
-            title: 'Нүүр',
+            drawerTitle: 'Нүүр',
+
             headerStyle: {
-              backgroundColor: 'tranparent',
+              backgroundColor: 'transparent',
+              // paddingTop: 40,
             },
+            headerRight: () => (
+              <Image
+                source={require('./assets/images/avatar.png')}
+                className="object-cover w-[50px] h-[50px] mr-[15px]"
+              />
+            ),
+
             drawerIcon: ({ color }) => (
               <Ionicons name="home-outline" size={22} color={color} />
             ),
@@ -51,10 +65,10 @@ export default function App() {
           component={PlaceHome}
         />
         <Drawer.Screen
-          name="Notifications"
-          component={NotificationsScreen}
+          name="asd"
+          component={AddMember}
           options={{
-            title: 'asd',
+            title: 'AddMember',
             headerStyle: {
               backgroundColor: 'tranparent',
             },
