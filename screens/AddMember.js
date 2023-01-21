@@ -5,8 +5,9 @@ import { styles } from '../constants/style'
 import Layout from '../layout'
 import { SIZE } from '../constants/style'
 import Search from '../components/Search'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const AddMember = () => {
+const AddMember = ({ navigation }) => {
   return (
     <Layout>
       <Search />

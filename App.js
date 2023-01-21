@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { NavigationContainer } from '@react-navigation/native'
+
 import * as React from 'react'
 import { Button, View } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
@@ -10,6 +11,7 @@ import PlaceHome from './screens/PlaceHome'
 import ChooseGroup from './screens/ChooseGroup'
 import { Image } from 'react-native'
 import AddMember from './screens/AddMember'
+import Chat from './screens/Chat'
 
 function NotificationsScreen({ navigation }) {
   return (
@@ -66,7 +68,7 @@ export default function App() {
         />
         <Drawer.Screen
           name="asd"
-          component={AddMember}
+          component={Chat}
           options={{
             title: 'AddMember',
             headerStyle: {

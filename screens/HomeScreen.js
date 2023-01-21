@@ -23,10 +23,11 @@ const Box = ({ className, children, style }) => {
   )
 }
 const stylesa = StyleSheet.create({
-  aaa: {
-    fontFamily: 'Lexend',
-  },
+  // aaa: {
+  //   fontFamily: 'Lexend',
+  // },
 })
+
 const HomeScreen = () => {
   const [fontsLoaded] = useFonts({
     Lexend: require('../assets/fonts/Lexend.ttf'),
@@ -41,7 +42,7 @@ const HomeScreen = () => {
               className="h-[145px] mb-[15px]"
               style={{ backgroundColor: COLORS.waterBlue }}
             >
-              <Text style={stylesa.aaa}>Upcoming</Text>
+              <Text>Upcoming</Text>
               <Text>50</Text>
               <Text>New chats</Text>
             </Box>
