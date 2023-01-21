@@ -1,11 +1,22 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SIZE } from '../constants/style';
 import Layout from '../src/layout';
 import SearchBar from '../src/utils/SearchBar';
+=======
+import React from 'react'
+import { Image, Text, View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
+import { styles } from '../constants/style'
+import Layout from '../layout'
+import { SIZE } from '../constants/style'
+import Search from '../components/Search'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+>>>>>>> af77150258634eb3216181eb2142ac417f7f859b
 
-const AddMember = () => {
+const AddMember = ({ navigation }) => {
   return (
     <Layout>
       <SearchBar />
