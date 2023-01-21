@@ -26,12 +26,6 @@
     },
     "web": {
       "favicon": "./assets/hover.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "b3a51c1d-463d-4a33-b4ae-6065fd023d24"
-      }
-    },
-    "owner": "teema"
+    }
   }
 }

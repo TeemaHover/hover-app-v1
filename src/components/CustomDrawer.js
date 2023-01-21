@@ -1,11 +1,11 @@
 import {
   DrawerContentScrollView,
   DrawerItemList,
-} from '@react-navigation/drawer'
-import React from 'react'
-import { Image, Text, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { COLORS } from '../constants/style'
+} from '@react-navigation/drawer';
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLORS } from '../../constants/style';
 
 const CustomDrawer = (props) => {
   return (
@@ -16,7 +16,7 @@ const CustomDrawer = (props) => {
       <DrawerContentScrollView {...props}>
         <View className="px-5 my-5">
           <Image
-            source={require('../assets/images/avatar.png')}
+            source={require('../../assets/images/avatar.png')}
             className="w-24 h-24 my-5"
           />
           <Text className="text-white text-custom">Эрдэмсайхан</Text>
@@ -32,7 +32,7 @@ const CustomDrawer = (props) => {
         </TouchableOpacity>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default CustomDrawer
+export default CustomDrawer;

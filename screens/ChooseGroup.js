@@ -1,16 +1,15 @@
-import React from 'react'
-import { Image, Text, View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
-import { styles } from '../constants/style'
-import Layout from '../layout'
-import { SIZE } from '../constants/style'
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { SIZE } from '../constants/style';
+import Layout from '../layout';
 
 const ChooseGroup = () => {
   return (
     <Layout>
       <Text className="text-[35px] font-bold">Choose Group</Text>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="flex-1 flex-row flex-wrap justify-between py-6">
+        <View className="flex-row flex-wrap justify-between flex-1 py-6">
           <View style={{ width: SIZE.pWidth, height: SIZE.pHeight }}>
             <View>
               <Image
@@ -23,7 +22,7 @@ const ChooseGroup = () => {
         </View>
       </ScrollView>
     </Layout>
-  )
-}
+  );
+};
 
-export default ChooseGroup
+export default ChooseGroup;

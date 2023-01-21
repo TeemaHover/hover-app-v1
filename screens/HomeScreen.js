@@ -1,72 +1,71 @@
-import React from 'react'
-import { Text, View, ScrollView } from 'react-native'
-import { styles, COLORS } from '../constants/style'
-import Layout from '../layout'
-import { StyleSheet } from 'react-native'
-import { useFonts } from 'expo-font'
+import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { STYLES } from '../constants/style';
+import { Activity } from '../src/components';
+import Layout from '../src/layout';
+import { GoChat } from '../src/utils';
 
-const nickname = 'Esa'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const Box = ({ className, children, style }) => {
-  return (
-    <View
-      className={`
-        ${className}   
-        ${styles.flexBetween}
-        py-5 
-        rounded-2xl
-      `}
-      style={style}
-    >
-      {children}
-    </View>
-  )
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
-const stylesa = StyleSheet.create({
-  aaa: {
-    fontFamily: 'Lexend',
-  },
-})
+
+const nickname = 'Esa';
+
 const HomeScreen = () => {
-  const [fontsLoaded] = useFonts({
-    Lexend: require('../assets/fonts/Lexend.ttf'),
-  })
+  const [expand, setExpand] = useState(false);
+
   return (
-    <Layout>
+    <Layout className="mb-[300px]">
       <Text className="text-[35px] font-bold mb-[20px]">Hello {nickname}</Text>
+
+      {/* Activity bar */}
       <View className="w-full">
-        <View className="flex flex-row w-full">
-          <View className="flex flex-column basis-1/3 ">
-            <Box
-              className="h-[145px] mb-[15px]"
-              style={{ backgroundColor: COLORS.waterBlue }}
-            >
-              <Text style={stylesa.aaa}>Upcoming</Text>
-              <Text>50</Text>
-              <Text>New chats</Text>
-            </Box>
-            <Box
-              className="h-[145px]"
-              style={{ backgroundColor: COLORS.orange, color: COLORS.white }}
-            >
-              <Text>Semester off</Text>
-              <Text>asd</Text>
-              <Text>Completed</Text>
-            </Box>
-          </View>
-          <Box
-            className="basis-2/3 ml-[15px]"
-            style={{
-              backgroundColor: COLORS.blue,
-              color: COLORS.white,
+        <Activity />
+      </View>
+
+      {/* Today's group chat */}
+      <View className="flex flex-col my-5">
+        <View className={`${STYLES.flexBetween} flex-row w-full`}>
+          <Text className="text-[21px]">
+            <Text className="font-bold">Today,</Text>
+            <Text> 25 November</Text>
+          </Text>
+          <TouchableOpacity
+            className={`${STYLES.flexCenter} flex-row`}
+            onPress={() => {
+              setExpand(!expand);
             }}
           >
-            <Text>Lorem ipsum dolor sit amet.</Text>
-          </Box>
+            <Text className="text-[15px]">All</Text>
+            <View
+              className={`${
+                expand ? 'rotate-0' : 'rotate-180'
+              } transition duration-500 ease-in-out `}
+            >
+              <Ionicons
+                name="caret-down"
+                // className={expand ? 'rotate-0' : 'rotate-180'}
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          className={`${
+            expand ? 'h-[300px]' : 'h-[350px]'
+          } mt-[15px] duration-500`}
+        >
+          <GoChat theme={getRandomInt(3)} />
+          <GoChat theme={getRandomInt(3)} />
+          <GoChat theme={getRandomInt(3)} />
+          <GoChat theme={getRandomInt(3)} />
+          <GoChat theme={getRandomInt(3)} />
+          <GoChat theme={getRandomInt(3)} />
         </View>
       </View>
     </Layout>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;

@@ -1,27 +1,25 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import { NavigationContainer } from '@react-navigation/native'
-import * as React from 'react'
-import { Button, View } from 'react-native'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import CustomDrawer from './components/CustomDrawer'
-import { COLORS } from './constants/style'
-import PlaceHome from './screens/PlaceHome'
-import ChooseGroup from './screens/ChooseGroup'
-import { Image } from 'react-native'
-import AddMember from './screens/AddMember'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import * as React from 'react';
+import { Button, Image, View } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { COLORS } from './constants/style';
+import AddMember from './screens/AddMember';
+import PlaceHome from './screens/PlaceHome';
+import CustomDrawer from './src/components/CustomDrawer';
 
 function NotificationsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button onPress={() => navigation.goBack()} title="Go back home" />
     </View>
-  )
+  );
 }
 
-const Drawer = createDrawerNavigator()
+const Drawer = createDrawerNavigator();
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -79,5 +77,5 @@ export default function App() {
         />
       </Drawer.Navigator>
     </NavigationContainer>
-  )
+  );
 }

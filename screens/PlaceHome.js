@@ -1,13 +1,12 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import React from 'react'
-import { Button, View } from 'react-native'
-import HomeScreen from './HomeScreen'
-import Feedback from './FeedbackScreen'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import { COLORS } from '../constants/style'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { Button, View } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { COLORS } from '../constants/style';
+import Feedback from './FeedbackScreen';
+import HomeScreen from './HomeScreen';
 
-const Tab = createBottomTabNavigator()
+const Tab = createBottomTabNavigator();
 
 function Chats({ navigation }) {
   return (
@@ -17,7 +16,7 @@ function Chats({ navigation }) {
         title="Go to notifications"
       />
     </View>
-  )
+  );
 }
 
 const PlaceHome = () => {
@@ -46,17 +45,21 @@ const PlaceHome = () => {
         headerShown: false,
 
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName
+          let iconName;
 
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline'
+            iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Chats') {
-            iconName = focused ? 'chatbox-ellipses' : 'chatbox-ellipses-outline'
+            iconName = focused
+              ? 'chatbox-ellipses'
+              : 'chatbox-ellipses-outline';
           } else if (route.name === 'Feedback') {
-            iconName = focused ? 'chatbox-ellipses' : 'chatbox-ellipses-outline'
+            iconName = focused
+              ? 'chatbox-ellipses'
+              : 'chatbox-ellipses-outline';
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />
+          return <Ionicons name={iconName} size={size} color={color} />;
         },
 
         tabBarActiveTintColor: COLORS.white,
@@ -72,7 +75,7 @@ const PlaceHome = () => {
       <Tab.Screen name="Chats" component={Chats} />
       <Tab.Screen name="Feedback" component={Feedback} />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
-export default PlaceHome
+export default PlaceHome;

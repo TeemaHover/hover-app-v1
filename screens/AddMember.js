@@ -1,22 +1,21 @@
-import React from 'react'
-import { Image, Text, View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
-import { styles } from '../constants/style'
-import Layout from '../layout'
-import { SIZE } from '../constants/style'
-import Search from '../components/Search'
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { SIZE } from '../constants/style';
+import Layout from '../src/layout';
+import SearchBar from '../src/utils/SearchBar';
 
 const AddMember = () => {
   return (
     <Layout>
-      <Search />
+      <SearchBar />
       <Text className="text-[35px] font-bold">Choose Student</Text>
       <Text className="text-[24px] ">MGM321_231</Text>
       <ScrollView
         showsVerticalScrollIndicator={false}
         // className={'flex flex-row border-2'}
       >
-        <View className="flex-1 flex-row flex-wrap justify-between py-6">
+        <View className="flex-row flex-wrap justify-between flex-1 py-6">
           <View style={{ width: SIZE.pWidth, height: SIZE.pHeight }}>
             <View>
               <Image
@@ -29,7 +28,7 @@ const AddMember = () => {
         </View>
       </ScrollView>
     </Layout>
-  )
-}
+  );
+};
 
-export default AddMember
+export default AddMember;
