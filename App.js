@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -6,25 +5,8 @@ import * as React from 'react';
 import { Button, Image, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from './constants/style';
-import AddMember from './screens/AddMember';
 import PlaceHome from './screens/PlaceHome';
 import CustomDrawer from './src/components/CustomDrawer';
-=======
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import { NavigationContainer } from '@react-navigation/native'
-
-import * as React from 'react'
-import { Button, View } from 'react-native'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import CustomDrawer from './components/CustomDrawer'
-import { COLORS } from './constants/style'
-import PlaceHome from './screens/PlaceHome'
-import ChooseGroup from './screens/ChooseGroup'
-import { Image } from 'react-native'
-import AddMember from './screens/AddMember'
-import Chat from './screens/Chat'
->>>>>>> af77150258634eb3216181eb2142ac417f7f859b
 
 function NotificationsScreen({ navigation }) {
   return (
